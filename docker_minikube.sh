@@ -17,6 +17,13 @@ git clone https://github.com/Mirantis/cri-dockerd.git
 wget https://storage.googleapis.com/golang/getgo/installer_linux
 chmod +x ./installer_linux
 ./installer_linux
+wget https://go.dev/dl/go1.21.2.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.21.2.linux-amd64.tar.gz
+sudo nano /root/.bashrc
+# Set the Go environment variables in your shell profile (e.g., ~/.bashrc or ~/.profile):
+            export GOROOT=/usr/local/go
+            export GOPATH=$HOME/go
+            export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 source ~/.bash_profile
 cd cri-dockerd
 mkdir bin
